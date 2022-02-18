@@ -4,6 +4,10 @@ import { Image } from "react-bootstrap";
 import sidebarStyles from "@/styles/Sidebar.module.css";
 
 const Sidebar = () => {
+  const handleLogOutBtnClick = () => {
+    console.log("Log Out button has been clicked");
+  };
+
   return (
     <div className={sidebarStyles.sideNav}>
       <div className={sidebarStyles.bigDivTop}>
@@ -62,7 +66,12 @@ const Sidebar = () => {
             alt="logout_icon"
             style={{ width: "35px", height: "35px", marginRight: "12px" }}
           />
-          <button className={sidebarStyles.logOutBtn}>Log Out</button>
+          <button
+            className={sidebarStyles.logOutBtn}
+            onClick={handleLogOutBtnClick}
+          >
+            Log Out
+          </button>
         </div>
       </div>
     </div>

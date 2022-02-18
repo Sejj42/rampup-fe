@@ -1,20 +1,21 @@
 import { Button } from "react-bootstrap";
 import styles from "@/styles/CreateEleBtn.module.css";
+import Link from "next/link";
 
 const CreateEleBtn = ({ btnTitle, btnType }) => {
-  const handleButtonPress = () => {
-    if (btnType === "createPod") {
-      console.log(btnType, "button has been clicked");
-    }
-    if (btnType === "createOrder") {
-      console.log(btnType, "button has been clicked");
-    }
-  };
-
   return (
-    <Button className={styles.btn} onClick={handleButtonPress}>
-      {btnTitle}
-    </Button>
+    <>
+      {btnType === "createPod" && (
+        <Link href="/manage-pods/add" passHref>
+          <Button className={styles.btn}>{btnTitle}</Button>
+        </Link>
+      )}
+      {btnType === "createOrder" && (
+        <Link href="/orders/add" passHref>
+          <Button className={styles.btn}>{btnTitle}</Button>
+        </Link>
+      )}
+    </>
   );
 };
 

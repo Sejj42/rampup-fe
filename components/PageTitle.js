@@ -9,7 +9,14 @@ const PageTitle = ({ bigTitle, subTitle, btnTitle, btnType }) => {
             <h1 className={styles.bigTitle}>{bigTitle}</h1>
             <h2 className={styles.subTitle}>{subTitle}</h2>
           </div>
-          {btnType && <CreateEleBtn btnTitle={btnTitle} btnType={btnType} />}
+          {btnType && (
+            <CreateEleBtn
+              bigTitle={bigTitle}
+              subtitle={subTitle}
+              btnTitle={btnTitle}
+              btnType={btnType}
+            />
+          )}
         </div>
         <div className={styles.hr}></div>
       </div>

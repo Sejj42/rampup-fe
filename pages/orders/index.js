@@ -2,7 +2,7 @@ import OrderList from "@/components/OrderList";
 import PageTitle from "@/components/PageTitle";
 import styles from "@/styles/ManagePodsPage.module.css";
 
-import { API_URL } from "../config";
+import { API_URL } from "../../config";
 
 const OrdersPage = ({ orders }) => {
   console.log(orders);
@@ -15,6 +15,7 @@ const OrdersPage = ({ orders }) => {
           btnTitle="+ Log Order"
           btnType="createOrder"
         />
+
         <PageTitle
           bigTitle="List of Orders"
           subTitle="Orders made, sorted by date descending"

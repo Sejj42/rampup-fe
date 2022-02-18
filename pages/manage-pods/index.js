@@ -1,7 +1,7 @@
 import PageTitle from "@/components/PageTitle";
 import PodList from "@/components/PodList";
 import styles from "@/styles/ManagePodsPage.module.css";
-import { API_URL } from "../config";
+import { API_URL } from "../../config";
 
 const ManagePodsPage = ({ pods }) => {
   console.log(pods);
