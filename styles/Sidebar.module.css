@@ -5,8 +5,10 @@
   top: 0;
   left: 0;
   background-color: #2f3b4c;
-  overflow-x: hidden;
   color: #fff;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .logoBar {
@@ -20,7 +22,7 @@
 }
 
 .logoAndBrandName {
-  height: 180px;
+  height: 120px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
   display: flex;
@@ -46,6 +48,10 @@
   color: #f1f1f1;
 }
 
+.navItemSection {
+  margin-left: 14px;
+}
+
 .navItem {
   padding: 8px;
   padding-left: 16px;
@@ -61,6 +67,35 @@
 
 .navItem:hover {
   background-color: red;
+}
+
+.logOutClause {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.logOutIconAndBtn {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.hr {
+  background-color: #9a9a9a;
+  width: 100%;
+  height: 1px;
+}
+
+.logOutBtn {
+  border: none;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #2f3b4c;
+  color: #fff;
 }
 
 @media screen and (max-height: 450px) {
