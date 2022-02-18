@@ -1,0 +1,20 @@
+.titleDiv {
+  margin-top: 24px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 3px solid red; */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.bigTitle {
+  font-size: 24px;
+  color: #2f3b4c;
+  font-weight: bold;
+}
+
+.subTitle {
+  font-size: 18px;
+  color: #9a9a9a;
+}
