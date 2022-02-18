@@ -1,5 +1,6 @@
 import styles from "@/styles/PodListItem.module.css";
 import Image from "next/image";
+import UtilityBtn from "./UtilityBtn";
 const PodListItem = ({ pod }) => {
   return (
     <div className={styles.container}>
@@ -19,22 +20,20 @@ const PodListItem = ({ pod }) => {
       <div className={styles.rightDiv}>
         <div className={styles.podPrice}>${pod.price}</div>
         <div className={styles.utilButtons}>
-          <div className={styles.editBtnDiv}>
-            <Image
-              src="/edit_icon.png"
-              alt="editIcon"
-              width={"25px"}
-              height={"25px"}
-            />
-          </div>
-          <div className={styles.trashIconDiv}>
-            <Image
-              src="/trash_icon.png"
-              alt="trashIcon"
-              width={"25px"}
-              height={"25px"}
-            />
-          </div>
+          <UtilityBtn
+            utility="Edit"
+            imgsrc="/edit_icon.png"
+            alttext="editIcon"
+            bgcolor="#519cff"
+            podid={pod.id}
+          />
+          <UtilityBtn
+            utility="Delete"
+            imgsrc="/trash_icon.png"
+            alttext="trashIcon"
+            bgcolor="#ff5151"
+            podid={pod.id}
+          />
         </div>
       </div>
     </div>

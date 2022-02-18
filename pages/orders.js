@@ -1,3 +1,4 @@
+import OrderList from "@/components/OrderList";
 import PageTitle from "@/components/PageTitle";
 import styles from "@/styles/ManagePodsPage.module.css";
 
@@ -14,6 +15,11 @@ const OrdersPage = ({ orders }) => {
           btnTitle="+ Log Order"
           btnType="createOrder"
         />
+        <PageTitle
+          bigTitle="List of Orders"
+          subTitle="Orders made, sorted by date descending"
+        />
+        <OrderList orders={orders} />
       </div>
     </>
   );
