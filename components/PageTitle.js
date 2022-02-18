@@ -3,14 +3,16 @@ import CreateEleBtn from "./CreateEleBtn";
 const PageTitle = ({ bigTitle, subTitle, btnTitle, btnType }) => {
   return (
     <>
-      <div className={styles.titleDiv}>
-        <div>
-          <h1 className={styles.bigTitle}>{bigTitle}</h1>
-          <h3 className={styles.subTitle}>{subTitle}</h3>
+      <div className={styles.container}>
+        <div className={styles.titleDiv}>
+          <div>
+            <h1 className={styles.bigTitle}>{bigTitle}</h1>
+            <h2 className={styles.subTitle}>{subTitle}</h2>
+          </div>
+          <CreateEleBtn btnTitle={btnTitle} btnType={btnType} />
         </div>
-        <CreateEleBtn btnTitle={btnTitle} btnType={btnType} />
+        <div className={styles.hr}></div>
       </div>
-      <div className={styles.hr}></div>
     </>
   );
 };

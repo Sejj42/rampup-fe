@@ -1,0 +1,69 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.leftDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.nameAndDescDiv {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-left: 30px;
+}
+
+.podName {
+  color: #404040;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.podDescription {
+  color: #6c6c6c;
+  font-size: 14px;
+}
+
+.rightDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.podPrice {
+  background-color: #cebef2;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px;
+  border-radius: 13px;
+}
+
+.utilButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.editBtnDiv {
+  padding: 13px;
+  background-color: #519cff;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.trashIconDiv {
+  padding: 13px;
+  background-color: #ff5151;
+  border-radius: 5px;
+}
