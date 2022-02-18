@@ -6,6 +6,10 @@
   flex: 1;
 }
 
+.homeTitle {
+  margin-left: 24px;
+}
+
 .btnsContainer {
   display: flex;
   justify-content: space-evenly;
