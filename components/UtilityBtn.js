@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 const UtilityBtn = ({ utility, imgsrc, alttext, bgcolor, podid }) => {
   const router = useRouter();
 
-  const deletePod = async () => {
+  const deletePod = async (e) => {
     if (confirm("Are you sure?")) {
       const res = await fetch(`${API_URL}/pods/${podid}`, {
         method: "DELETE",
@@ -22,10 +22,10 @@ const UtilityBtn = ({ utility, imgsrc, alttext, bgcolor, podid }) => {
     }
   };
 
-  const handleButtonClick = () => {
+  const handleButtonClick = (e) => {
     console.log(utility, "button has been pressed");
     if (utility === "Delete") {
-      deletePod();
+      deletePod(e);
     }
   };
   return (
