@@ -32,7 +32,7 @@ const data = {
 
 const Chartie = () => (
   <div className={styles.chartieContainer}>
-    <Line data={data} width={400} height={400} />
+    <Line data={data} width={600} height={300} />
   </div>
 );
 
