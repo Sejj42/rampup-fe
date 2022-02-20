@@ -17,6 +17,7 @@ const UtilityBtn = ({ utility, imgsrc, alttext, bgcolor, podid }) => {
       if (!res.ok) {
         toast.error(data.message);
       } else {
+        toast.success("Pod deleted successfully.");
         router.push("/manage-pods");
       }
     }
