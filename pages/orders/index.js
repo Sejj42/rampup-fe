@@ -1,3 +1,4 @@
+import Chartie from "@/components/Chartie";
 import OrderList from "@/components/OrderList";
 import PageTitle from "@/components/PageTitle";
 import styles from "@/styles/OrdersPage.module.css";
@@ -15,10 +16,14 @@ const OrdersPage = ({ orders }) => {
           btnTitle="+ Log Order"
           btnType="createOrder"
         />
+        <div className={styles.chartContainer}>
+          <Chartie />
+        </div>
 
         <PageTitle
           bigTitle="List of Orders"
           subTitle="Orders made, sorted by date descending"
+          className={styles.secondTitleContainer}
         />
         <OrderList orders={orders} />
       </div>
