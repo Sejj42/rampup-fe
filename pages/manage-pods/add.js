@@ -1,30 +1,53 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import styles from "@/styles/AddPodPage.module.css";
-import Layout from "@/components/Layout";
-import Link from "next/link";
 import PageTitle from "@/components/PageTitle";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { API_URL } from "@/config/index";
+import axios from "axios";
 
 const CreatePodPage = () => {
   const [values, setValues] = useState({
     name: "",
     description: "",
-    weightInG: "",
+    weightInG: 0,
     color: "",
     brand: "",
     imageURL: "",
-    price: "",
-    protein: "",
-    sugar: "",
-    carbohydrates: "",
-    sodium: "",
-    cholesterol: "",
-    totalfats: "",
+    price: 0,
+    protein: 0,
+    sugar: 0,
+    carbohydrates: 0,
+    sodium: 0,
+    cholesterol: 0,
+    totalfats: 0,
   });
   const router = useRouter();
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(values);
+    const hasEmptyFields = Object.values(values).some((ele) => ele === "");
+    if (hasEmptyFields) {
+      toast.error("Please fill in all fields.");
+    }
+
+    const data = { data: { ...values } };
+
+    const res = await fetch(`${API_URL}/pods`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    if (!res.ok) {
+      toast.error("Something went wrong.");
+    } else {
+      toast.success("Pod added successfully.");
+      // const pods = await res.json();
+      // router.push("/manage-pods");
+    }
   };
 
   const handleInputChange = (e) => {
@@ -35,7 +58,8 @@ const CreatePodPage = () => {
 
   return (
     <>
-      {/* <PageTitle bigTitle="Create New Pod" subTitle="DO IT NOW" /> */}
+      <PageTitle bigTitle="Create New Pod" subTitle="Yes" />
+      <ToastContainer />
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.grid}>
           <div>
@@ -64,7 +88,7 @@ const CreatePodPage = () => {
               type="number"
               name="weightInG"
               id="weightInG"
-              value={values.weightInG}
+              value={Number(values.weightInG)}
               onChange={handleInputChange}
             />
           </div>

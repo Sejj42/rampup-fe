@@ -1,6 +1,6 @@
 import OrderList from "@/components/OrderList";
 import PageTitle from "@/components/PageTitle";
-import styles from "@/styles/ManagePodsPage.module.css";
+import styles from "@/styles/OrdersPage.module.css";
 
 import { API_URL } from "../../config";
 

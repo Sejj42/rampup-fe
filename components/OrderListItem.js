@@ -1,15 +1,16 @@
 import styles from "@/styles/OrderListItem.module.css";
 const OrderListItem = ({ order }) => {
+  console.log(order);
   return (
     <div className={styles.container}>
-      <span>{order.id}</span>
-      <span>
+      <div>{order.id}</div>
+      <div>
         {order.customerFirstName} {order.customerLastName}
-      </span>
-      <span>{order.createdAt}</span>
-      <span>{order.totalQty}</span>
-      <span>${order.price}</span>
-      <span>${order.shippingCost}</span>
+      </div>
+      <div>{new Date(order.created_at).toLocaleDateString("en-GB")}</div>
+      <div>{order.totalQty}</div>
+      <div>${order.price}</div>
+      <div>${order.shippingCost}</div>
     </div>
   );
 };
