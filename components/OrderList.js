@@ -9,7 +9,7 @@ const OrderList = ({ orders }) => {
     <div className={styles.container}>
       <OrderListHeaders />
       <div className={styles.hr}></div>
-      <div>
+      <div className={styles.listContainer}>
         {orders.map((order) => (
           <OrderListItem key={order.id} order={order} />
         ))}

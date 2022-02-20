@@ -5,3 +5,11 @@
   margin-top: 8px;
   margin-bottom: 14px;
 }
+
+.listContainer {
+  /* display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 3fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px; */
+}
