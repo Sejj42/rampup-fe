@@ -17,7 +17,7 @@ const OrdersPage = ({ orders }) => {
           btnType="createOrder"
         />
         <div className={styles.chartContainer}>
-          <Chartie />
+          <Chartie orders={orders} />
         </div>
 
         <PageTitle
@@ -25,7 +25,7 @@ const OrdersPage = ({ orders }) => {
           subTitle="Orders made, sorted by date descending"
           className={styles.secondTitleContainer}
         />
-        <OrderList orders={orders} />
+        {orders ? <OrderList orders={orders} /> : <h1>Hi!</h1>}
       </div>
     </>
   );

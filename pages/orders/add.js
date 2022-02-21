@@ -35,22 +35,22 @@ const AddOrderPage = ({ podsArray }) => {
     };
     console.log(orderObject);
 
-    // const res = await fetch(`${API_URL}/orders`, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(orderObject),
-    // });
-    // console.log("below is console log of res in add order");
-    // console.log(res);
-    // if (!res.ok) {
-    //   toast.error("Something went wrong.");
-    // } else {
-    //   toast.success("Order logged successfully.");
-    //   const orders = await res.json();
-    //   router.push("/orders");
-    // }
+    const res = await fetch(`${API_URL}/orders`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(orderObject),
+    });
+    console.log("below is console log of res in add order");
+    console.log(res);
+    if (!res.ok) {
+      toast.error("Something went wrong.");
+    } else {
+      toast.success("Order logged successfully.");
+      const orders = await res.json();
+      router.push("/orders");
+    }
   };
 
   return (
@@ -59,9 +59,10 @@ const AddOrderPage = ({ podsArray }) => {
       <ToastContainer />
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.nameInputFields}>
-          <div>
+          <div className={styles.name}>
             <label htmlFor="customerFirstName">Customer First Name</label>
             <input
+              placeholder="First Name"
               type="text"
               name="customerFirstName"
               id="customerFirstName"
@@ -70,9 +71,10 @@ const AddOrderPage = ({ podsArray }) => {
             />
           </div>
 
-          <div>
+          <div className={styles.name}>
             <label htmlFor="customerLastName">Customer Last Name</label>
             <input
+              placeholder="Last Name"
               type="text"
               name="customerLastName"
               id="customerLastName"
