@@ -4,7 +4,6 @@ import Chart from "chart.js/auto";
 import styles from "@/styles/Chartie.module.css";
 
 const Chartie = ({ orders }) => {
-  // console.log
   const dates = orders.map((order) => {
     return new Date(order.created_at).toLocaleDateString("en-GB");
   });
@@ -15,40 +14,7 @@ const Chartie = ({ orders }) => {
 
   const uniqueDatesArray = dates.filter(onlyUniqueDates);
 
-  console.log("below is all dates");
-  console.log(dates);
-
-  console.log("below is unique dates array");
-  console.log(uniqueDatesArray);
-
-  const firstPodSalesPerDate = () => {
-    const firstPodSalesPerDateArray = orders.map((order, uniqueDatesArray) => {
-      return firstPodSales();
-    });
-    return firstPodSalesPerDateArray;
-  };
-
-  // i need an array of a single day with all the quantity sold of Pod 1
-
-  // i need an array of all unique dates - which I have.
-
-  // lets get the total sales of one pod in a single day that comes out of the unique dates array that i have
-
-  // const firstPodSingleDaySalesTheFunction = () => {
-  //   const date = dates[0];
-  //   console.log(date);
-  //   let firstPodSingleDaySales = 0;
-  //   const newArray = orders.forEach((order) => {
-  //     if (new Date(order.created_at).toLocaleDateString("en-GB") === date) {
-  //       firstPodSingleDaySales += order.firstPodQty;
-  //     }
-  //   });
-  //   return firstPodSingleDaySales;
-  // };
-
   const firstPodSingleDaySalesTheFunction = () => {
-    // console.log("check unique dates in array in fn");
-    // console.log(uniqueDatesArray);
     const arrayOfTotalSalesPerDayFirstPod = uniqueDatesArray.map((date) => {
       let firstPodSingleDaySales = 0;
       orders.forEach((order) => {
@@ -62,8 +28,6 @@ const Chartie = ({ orders }) => {
   };
 
   const secondPodSingleDaySalesTheFunction = () => {
-    // console.log("check unique dates in array in fn");
-    // console.log(uniqueDatesArray);
     const arrayOfTotalSalesPerDaySecondPod = uniqueDatesArray.map((date) => {
       let secondPodSingleDaySales = 0;
       orders.forEach((order) => {
@@ -79,32 +43,6 @@ const Chartie = ({ orders }) => {
   console.log("check the function");
   console.log(firstPodSingleDaySalesTheFunction());
   console.log(secondPodSingleDaySalesTheFunction());
-
-  const firstPodSales = orders.map((order) => {
-    return order.firstPodQty;
-  });
-  const secondPodSales = orders.map((order) => {
-    return order.secondPodQty;
-  });
-
-  const xAndYObjectsForFirstPod = orders.map((order) => {
-    return {
-      x: new Date(order.created_at).toLocaleDateString("en-GB"),
-      y: order.firstPodQty,
-    };
-  });
-
-  const xAndYObjectsForSecondPod = orders.map((order) => {
-    return {
-      x: new Date(order.created_at).toLocaleDateString("en-GB"),
-      y: order.secondPodQty,
-    };
-  });
-
-  console.log("below is xandyobjects FIRST");
-  console.log(xAndYObjectsForFirstPod);
-  console.log("below is xandyobjects SECOND");
-  console.log(xAndYObjectsForSecondPod);
 
   const data = {
     labels: uniqueDatesArray,
