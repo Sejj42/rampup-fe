@@ -21,6 +21,65 @@ const Chartie = ({ orders }) => {
   console.log("below is unique dates array");
   console.log(uniqueDatesArray);
 
+  const firstPodSalesPerDate = () => {
+    const firstPodSalesPerDateArray = orders.map((order, uniqueDatesArray) => {
+      return firstPodSales();
+    });
+    return firstPodSalesPerDateArray;
+  };
+
+  // i need an array of a single day with all the quantity sold of Pod 1
+
+  // i need an array of all unique dates - which I have.
+
+  // lets get the total sales of one pod in a single day that comes out of the unique dates array that i have
+
+  // const firstPodSingleDaySalesTheFunction = () => {
+  //   const date = dates[0];
+  //   console.log(date);
+  //   let firstPodSingleDaySales = 0;
+  //   const newArray = orders.forEach((order) => {
+  //     if (new Date(order.created_at).toLocaleDateString("en-GB") === date) {
+  //       firstPodSingleDaySales += order.firstPodQty;
+  //     }
+  //   });
+  //   return firstPodSingleDaySales;
+  // };
+
+  const firstPodSingleDaySalesTheFunction = () => {
+    // console.log("check unique dates in array in fn");
+    // console.log(uniqueDatesArray);
+    const arrayOfTotalSalesPerDayFirstPod = uniqueDatesArray.map((date) => {
+      let firstPodSingleDaySales = 0;
+      orders.forEach((order) => {
+        if (new Date(order.created_at).toLocaleDateString("en-GB") === date) {
+          firstPodSingleDaySales += order.firstPodQty;
+        }
+      });
+      return firstPodSingleDaySales;
+    });
+    return arrayOfTotalSalesPerDayFirstPod;
+  };
+
+  const secondPodSingleDaySalesTheFunction = () => {
+    // console.log("check unique dates in array in fn");
+    // console.log(uniqueDatesArray);
+    const arrayOfTotalSalesPerDaySecondPod = uniqueDatesArray.map((date) => {
+      let secondPodSingleDaySales = 0;
+      orders.forEach((order) => {
+        if (new Date(order.created_at).toLocaleDateString("en-GB") === date) {
+          secondPodSingleDaySales += order.secondPodQty;
+        }
+      });
+      return secondPodSingleDaySales;
+    });
+    return arrayOfTotalSalesPerDaySecondPod;
+  };
+
+  console.log("check the function");
+  console.log(firstPodSingleDaySalesTheFunction());
+  console.log(secondPodSingleDaySalesTheFunction());
+
   const firstPodSales = orders.map((order) => {
     return order.firstPodQty;
   });
@@ -69,7 +128,7 @@ const Chartie = ({ orders }) => {
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        data: xAndYObjectsForFirstPod,
+        data: firstPodSingleDaySalesTheFunction(),
       },
       {
         label: "White Choclate Pod",
@@ -90,7 +149,7 @@ const Chartie = ({ orders }) => {
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        data: xAndYObjectsForSecondPod,
+        data: secondPodSingleDaySalesTheFunction(),
       },
     ],
   };
