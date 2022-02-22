@@ -6,7 +6,6 @@ import styles from "@/styles/OrdersPage.module.css";
 import { API_URL } from "../../config";
 
 const OrdersPage = ({ orders }) => {
-  console.log(orders);
   return (
     <>
       <div className={styles.container}>

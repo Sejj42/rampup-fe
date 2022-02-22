@@ -3,8 +3,6 @@ import OrderListHeaders from "./OrderListHeaders";
 import OrderListItem from "./OrderListItem";
 
 const OrderList = ({ orders }) => {
-  console.log("hi");
-  console.log(orders);
   return (
     <div className={styles.container}>
       <OrderListHeaders />

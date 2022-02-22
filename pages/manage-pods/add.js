@@ -48,7 +48,6 @@ const CreatePodPage = () => {
       },
       body: JSON.stringify(podObject),
     });
-    console.log("below is console log of res");
     console.log(res);
     if (!res.ok) {
       toast.error("Something went wrong.");

@@ -12,7 +12,7 @@ const Chartie = ({ orders }) => {
     return self.indexOf(value) === index;
   };
 
-  const uniqueDatesArray = dates.filter(onlyUniqueDates);
+  const uniqueDatesArray = dates.filter(onlyUniqueDates).reverse();
 
   const firstPodSingleDaySalesTheFunction = () => {
     const arrayOfTotalSalesPerDayFirstPod = uniqueDatesArray.map((date) => {
@@ -39,11 +39,6 @@ const Chartie = ({ orders }) => {
     });
     return arrayOfTotalSalesPerDaySecondPod;
   };
-
-  console.log("check the function");
-  console.log(firstPodSingleDaySalesTheFunction());
-  console.log(secondPodSingleDaySalesTheFunction());
-
   const data = {
     labels: uniqueDatesArray,
     datasets: [

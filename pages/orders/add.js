@@ -33,7 +33,6 @@ const AddOrderPage = ({ podsArray }) => {
         podsArray[1].price * Number(secondPodSoldQty),
       shippingCost: Number(shippingCost),
     };
-    console.log(orderObject);
 
     const res = await fetch(`${API_URL}/orders`, {
       method: "POST",
@@ -42,7 +41,6 @@ const AddOrderPage = ({ podsArray }) => {
       },
       body: JSON.stringify(orderObject),
     });
-    console.log("below is console log of res in add order");
     console.log(res);
     if (!res.ok) {
       toast.error("Something went wrong.");
